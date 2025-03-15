@@ -5,11 +5,10 @@ public class BinarySearch {
         this.arr=arr;
     }
 
-  int  binarySearch(int value){
-        int start=0;
-        int end = arr.length;
+  int  binarySearch(int value,int start, int end){
+
       boolean isAscending= arr[start]<arr[end-1];
-        for(int i = start; i < end; i++) {
+      while(start<=end){
             int mid = (start+end)/2;
             if(arr[mid]<value){
               if(isAscending)  start=mid+1;

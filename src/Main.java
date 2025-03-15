@@ -3,22 +3,47 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        // Binary search example
-        linearSearch();
+//        // Binary search example
+//        linearSearch();
+//
+//        // Binary search example
+//        binarySearch();
+//
+        // Find ceil or floor
 
-        // Binary search example
-        binarySearch();
+//        findFloororCeil();
 
+        firstLastOccurence();
 
     }
+
+    private static void firstLastOccurence() {
+        int[] arr={1,2,3,4,5,6,7,7,7,7,8,9};
+        FirstLastOccurence firstLastOcurence= new FirstLastOccurence(arr);
+        int[] restult = firstLastOcurence.findFirstLastOccurence(7);
+        System.out.println(Arrays.toString(restult));
+    }
+
+    private static void findFloororCeil() {
+        int[] arr = new int[]{2,34,40,56,67,897,1233,1235,12144,34556};
+
+        FloorCeil floorOrCeil=new FloorCeil(arr);
+        int target=34559;
+       int ceilNumber= floorOrCeil.ceil(target);
+       int floorNumber= floorOrCeil.floor(target);
+        System.out.println("Ceil of number "+target+" : "+ceilNumber);
+        System.out.println("Floor of number "+target+" : "+floorNumber);
+
+    }
+
     private static void binarySearch(){
         int[] arrAsc = new int[]{2,34,40,56,67,897,1233,1235,12144,34556};
         int[] arrDesc = new int[]{1423432,23124,1234,1112,999,555,222,99,89,76,67,32,10,1};
         BinarySearch searchAscending = new BinarySearch(arrAsc);
         BinarySearch searchDescending = new BinarySearch(arrDesc);
         int element = 10;
-     int positionAsc =   searchAscending.binarySearch(element);
-        int positionDesc = searchDescending.binarySearch(element);
+     int positionAsc =   searchAscending.binarySearch(element,0,arrAsc.length-1);
+        int positionDesc = searchDescending.binarySearch(element,0,arrDesc.length-1);
         String messageAscArray = getMessage(positionAsc);
         String messageDescArray = getMessage(positionDesc);
         System.out.println("Ascending : "+messageAscArray);
