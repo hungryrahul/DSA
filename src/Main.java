@@ -3,18 +3,28 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-//        // Binary search example
-//        linearSearch();
-//
-//        // Binary search example
-//        binarySearch();
-//
-        // Find ceil or floor
+findPeak();
 
-//        findFloororCeil();
+    }
 
-        firstLastOccurence();
+    private static void findPeak() {
+        int[] arr={1,2,4,5,6,7,6,5,4,3,2,1};
+        BitonnicArray search= new BitonnicArray(arr);
+        int peakPostion = search.findPeak();
+        System.out.println("Element at peak is"+ arr[peakPostion]);
 
+        int elementPostion = search.findElement(4);
+        System.out.println("Element  is at position :"+ elementPostion);
+    }
+
+
+
+
+    private static void doInfiniteSearch() {
+        int[] arr={1,2,3,4,5,6,7,8,9,12,13,14,15,16,17,2243,43545,7658};
+        InfiniteArrayBSA search= new InfiniteArrayBSA(arr);
+        int restult = search.findTheElement(17);
+        System.out.println("Element Found at"+ restult);
     }
 
     private static void firstLastOccurence() {
